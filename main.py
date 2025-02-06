@@ -20,11 +20,6 @@ blob_service_client = BlobServiceClient.from_connection_string(AZURE_STORAGE_CON
 container_client = blob_service_client.get_container_client(CONTAINER_NAME)
 container_client_csv = blob_service_client.get_container_client(CONTAINER_CSV)
 
-# root endpoint
-@app.route('/')
-def hello():
-    return "CSVitesse"
-
 # Endpoint to push CSV file
 @app.route('/csv/upload', methods=['POST'])
 def upload_csv():
